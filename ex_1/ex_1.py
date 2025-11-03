@@ -14,8 +14,12 @@ def total_salary(path):
         t=sum([int(v) for v in my_dict.values()]) 
         av=t//len(my_dict)
         return t, av
+    except FileNotFoundError:
+        return f"🔦 Could not find {data}"
+    except ValueError:
+        return f" 🔧 wrong format of {data}"
     except Exception as e:
-        return f"Something is worng with {data}"
+        return f" 💣 something unexpected happened"
     
     
 total, average = total_salary("/Users/mruda/Desktop/repos/goit-pycore-hw-04/ex_1/data.txt")
@@ -24,7 +28,7 @@ print(f"Загальна сума заробітної плати: {total}, Се
         
         
 
-   
+  
    
  
  
